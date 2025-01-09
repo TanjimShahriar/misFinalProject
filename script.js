@@ -29,3 +29,18 @@ function fetchMeals(query) {
         resultsContainer.innerHTML = `<p>Failed to fetch meals. Please try again later.</p>`;
       });
   }
+
+  function displayMeals(meals, showAllButton) {
+    resultsContainer.innerHTML = meals
+      .map(function (meal) {
+        return `
+      <div class="meal-card">
+        <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+        <div class="meal-info">
+          <h3>${meal.strMeal}</h3>
+          <p><strong>Meal ID:</strong> ${meal.idMeal}</p>
+          <p>${meal.strInstructions.slice(0, 100)}...</p>
+        </div>
+      </div>
+    `;
+      })
