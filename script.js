@@ -44,3 +44,12 @@ function fetchMeals(query) {
       </div>
     `;
       })
+    }
+      .join("");
+
+      if (showAllButton && allResults.length > 5) {
+        resultsContainer.innerHTML += `
+          <div class="show-all-btn">
+            <button id="show-all-button">SHOW ALL</button>
+          </div>
+        `;
